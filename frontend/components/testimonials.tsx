@@ -8,8 +8,8 @@ const testimonials = [
     role: "Owner, FitPro Gym",
     image: "/gym-owner-male.jpg",
     content:
-      "FitFlow transformed how we manage our gym. Our administrative time decreased by 60%, and member satisfaction increased significantly.",
-    rating: 5,
+      "Get Mygym transformed how we manage our gym. Our administrative time decreased by 60%, and member satisfaction increased significantly.",
+    rating: 3,
   },
   {
     name: "Sarah Williams",
@@ -17,14 +17,14 @@ const testimonials = [
     image: "/gym-manager-female.jpg",
     content:
       "The analytics dashboard gives us insights we never had before. We can now make data-driven decisions about our memberships and growth.",
-    rating: 5,
+    rating: 4,
   },
   {
     name: "Michael Chen",
     role: "Founder, Elite Fitness",
     image: "/fitness-founder.jpg",
     content:
-      "Exceptional support team and powerful features. FitFlow is the backbone of our operation across all three locations.",
+      "Exceptional support team and powerful features. Get Mygym is the backbone of our operation across all three locations.",
     rating: 5,
   },
 ]
@@ -36,7 +36,7 @@ export function Testimonials() {
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold mb-4 text-white">Loved by Gym Owners</h2>
           <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-            See what gym owners and managers are saying about FitFlow.
+            See what gym owners and managers are saying about Get Mygym.
           </p>
         </div>
 

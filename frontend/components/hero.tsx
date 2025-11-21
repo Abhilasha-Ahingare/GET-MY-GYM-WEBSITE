@@ -28,17 +28,9 @@ export function Hero() {
   return (
     <section
       ref={containerRef}
-      className="relative min-h-screen flex items-center justify-center pt-20 px-4 sm:px-6 lg:px-8 overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center pt-20 px-4 sm:px-6 lg:px-7 overflow-hidden"
     >
-      {/* <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 right-10 w-96 h-96 bg-neon/10 rounded-full blur-3xl animate-float opacity-50" />
-        <div className="absolute bottom-20 left-10 w-96 h-96 bg-neon-light/10 rounded-full blur-3xl animate-float animation-delay-2000 opacity-50" />
-        <div className="absolute top-1/2 left-1/3 w-72 h-72 bg-pink-accent/5 rounded-full blur-3xl animate-pulse opacity-30" />
-        <div className="absolute top-0 left-1/4 w-1 h-1/2 bg-gradient-to-b from-neon/30 to-transparent animate-slideDown" />
-        <div className="absolute bottom-0 right-1/4 w-1 h-1/2 bg-gradient-to-t from-neon-light/30 to-transparent animate-slideUp" />
-      </div> */}
-
-      <div className="max-w-5xl mx-auto text-center relative z-10">
+      <div className="max-w-7xl mx-auto text-center relative z-10">
         <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full bg-gradient-to-r from-neon/20 to-neon-light/20 border border-neon/50 backdrop-blur-sm animate-fadeInDown">
           <span className="relative flex h-2 w-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-neon opacity-75" />
@@ -54,7 +46,7 @@ export function Hero() {
           <span className="block text-white mt-2 animate-fadeInUp animation-delay-300">Made Simple</span>
         </h1>
 
-        <p className="text-2xl sm:text-xl text-gray-400 mb-8 text-balance max-w-2xl mx-auto animate-fadeInUp animation-delay-500">
+        <p className="text-2xl sm:text-xl text-gray-400 mb-8 text-balance max-w-7xl mx-auto animate-fadeInUp animation-delay-500">
           Streamline member management, automate renewals, track attendance, and gain deep insights—all from a unified,
           intuitive platform built for modern fitness businesses.
         </p>
@@ -89,7 +81,7 @@ export function Hero() {
           </div>
           <div className="hidden sm:block w-px h-4 bg-gray-700" />
           <div className="flex items-center gap-2 group hover:text-pink-accent transition duration-300">
-            <div className="w-8 h-8 bg-pink-accent/20 rounded-full flex items-center justify-center text-pink-accent text-xs font-bold group-hover:bg-pink-accent/40 transition">
+            <div className="w-8 h-8 bg-neon-light/20 rounded-full flex items-center justify-center text-neon-light text-xs font-bold group-hover:bg-neon-light/40 transition">
               ✓
             </div>
             <span>24/7 Support</span>

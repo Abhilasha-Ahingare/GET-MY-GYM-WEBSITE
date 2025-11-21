@@ -1,67 +1,91 @@
 "use client"
 
-import { Users, Clock, RefreshCw, TrendingUp, Bell, BarChart3, FileText, Download } from "lucide-react"
+import { Users, Clock, RefreshCw, TrendingUp, Bell, BarChart3, FileText, Download, MessageCircle, IndianRupee, Search, Shield } from "lucide-react"
 
 const features = [
   {
-    icon: Users,
-    title: "Member Management",
-    description: "Complete member profiles, attendance tracking, refund processing, and auto-renewal—all centralized.",
+    icon: Search,
+    title: "Inquiry Management",
+    description: "Store and manage all inquiries with multiple facility options and track potential members effectively.",
     color: "from-neon to-neon-light",
   },
   {
-    icon: RefreshCw,
-    title: "Auto-Renewal System",
-    description: "Automated membership renewals with flexible scheduling and payment management.",
+    icon: TrendingUp,
+    title: "Expense & Income Tracking",
+    description: "Record all expenses and income to monitor your gym's financial health with detailed categorization.",
     color: "from-neon-light to-neon",
   },
   {
-    icon: Clock,
-    title: "Attendance Tracking",
-    description: "Real-time check-in/check-out system with detailed attendance analytics.",
+    icon: Users,
+    title: "Member Management",
+    description: "Maintain complete details of all gym members, membership status, and personal information in one place.",
     color: "from-neon to-accent",
   },
   {
-    icon: Bell,
-    title: "Smart Notifications",
-    description: "Automated alerts, reminders, and real-time updates for members and staff.",
+    icon: Users,
+    title: "Staff Management",
+    description: "Manage all gym staff including trainers, receptionists, and managers with role-based permissions.",
     color: "from-accent to-neon-light",
   },
   {
-    icon: TrendingUp,
-    title: "Income & Expense Management",
-    description: "Track revenue, manage expenses, and monitor financial health with ease.",
+    icon: Clock,
+    title: "Attendance System",
+    description: "Real-time attendance for staff and members with bulk check-in/check-out and detailed history tracking.",
     color: "from-neon-light to-accent",
   },
   {
-    icon: BarChart3,
-    title: "Advanced Analytics Dashboard",
-    description: "Beautiful charts, deep insights, and smart analytics for data-driven decisions.",
+    icon: RefreshCw,
+    title: "Membership Plans",
+    description: "Create and manage different membership plans with automatic renewal reminders and flexible pricing.",
     color: "from-accent to-neon",
   },
   {
-    icon: FileText,
-    title: "Report Generation",
-    description: "Generate comprehensive reports in multiple formats for analysis and compliance.",
+    icon: IndianRupee,
+    title: "Discounts & Payments",
+    description: "Support for discounts, special offers, online payments, cash payments, and payment tracking.",
     color: "from-neon to-accent",
   },
   {
-    icon: Download,
-    title: "Import/Export Tools",
-    description: "Support for PDF, JSON, Excel, CSV, and Docs for seamless data management.",
+    icon: BarChart3,
+    title: "Reports & Analytics",
+    description: "Generate detailed reports and export them in Excel, CSV, PDF, JSON formats for comprehensive analysis.",
     color: "from-neon-light to-neon",
+  },
+  {
+    icon: Bell,
+    title: "Notification System",
+    description: "Email, WhatsApp, and SMS notifications for renewals, payments, alerts, and member communication.",
+    color: "from-accent to-neon",
+  },
+  {
+    icon: MessageCircle,
+    title: "WhatsApp Integration",
+    description: "Send reminders, alerts, and updates directly on WhatsApp for instant member communication.",
+    color: "from-neon to-accent",
+  },
+  {
+    icon: BarChart3,
+    title: "Real-Time Dashboard",
+    description: "Real-time updates for attendance, inquiries, payments, renewals, and daily business activities.",
+    color: "from-neon-light to-neon",
+  },
+  {
+    icon: Shield,
+    title: "Data Security",
+    description: "Enterprise-grade security with daily backups, encryption, and secure access controls for your data.",
+    color: "from-accent to-neon-light",
   },
 ]
 
 export function Features() {
   return (
-    <section id="features" className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <section id="features" className="py-24 px-4 sm:px-6 lg:px-7 relative overflow-hidden">
       <div className="max-w-7xl mx-auto">
         {/* Section header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold mb-4 text-white">Powerful Features for Modern Gyms</h2>
+          <h2 className="text-4xl sm:text-5xl font-bold mb-4 text-white">Complete Gym Management Solution</h2>
           <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-            Everything you need to run a successful fitness business, from member management to advanced analytics.
+            Everything you need to run your gym smoothly - from member check-ins to financial reports, all in one platform.
           </p>
         </div>
 
@@ -93,6 +117,22 @@ export function Features() {
               </div>
             )
           })}
+        </div>
+
+        {/* Additional feature highlights */}
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+          <div className="p-6 rounded-xl bg-gray-900/40 border border-neon/20">
+            <div className="text-3xl font-bold text-neon mb-2">500+</div>
+            <div className="text-gray-400">Gyms Using Our Platform</div>
+          </div>
+          <div className="p-6 rounded-xl bg-gray-900/40 border border-neon/20">
+            <div className="text-3xl font-bold text-neon-light mb-2">50,000+</div>
+            <div className="text-gray-400">Active Members Managed</div>
+          </div>
+          <div className="p-6 rounded-xl bg-gray-900/40 border border-neon/20">
+            <div className="text-3xl font-bold text-accent mb-2">1M+</div>
+            <div className="text-gray-400">Monthly Check-ins Processed</div>
+          </div>
         </div>
       </div>
     </section>

@@ -6,7 +6,7 @@ import { ArrowRight, Phone, Mail } from "lucide-react"
 export function CTA() {
   return (
     <section className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         {/* Background elements */}
         <div className="absolute inset-0 -z-10">
           <div className="absolute top-0 right-0 w-72 h-72 bg-neon/10 rounded-full blur-3xl" />
@@ -15,16 +15,15 @@ export function CTA() {
 
         <div className="text-center">
           <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-white text-balance">
-            Ready to Transform Your Gym Business?
+            Ready to Transform Your Gym Business..?
           </h2>
-          <p className="text-lg text-gray-400 mb-12 max-w-2xl mx-auto text-balance">
-            Join hundreds of gyms already using FitFlow to streamline operations and grow their business. Start your
-            free trial today.
+          <p className="text-lg  text-gray-400 mb-12 max-w-2xl mx-auto text-balance">
+            Join hundreds of gyms already using Get Mygym to streamline operations and grow their business. Book right now for demo 
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
             <Button className="group bg-gradient-to-r from-neon to-neon-light hover:from-neon-dark hover:to-neon text-black font-semibold px-8 py-6 text-lg w-full sm:w-auto">
-              Try Free for 14 Days
+              Login
               <ArrowRight className="ml-2 group-hover:translate-x-1 transition" size={20} />
             </Button>
             <Button

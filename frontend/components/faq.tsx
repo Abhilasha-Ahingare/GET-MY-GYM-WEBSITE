@@ -5,9 +5,9 @@ import { ChevronDown } from "lucide-react"
 
 const faqs = [
   {
-    question: "Is FitFlow suitable for small gyms?",
+    question: "Is Get Mygym suitable for small gyms?",
     answer:
-      "FitFlow scales from small solo gyms to large chains. Our Starter plan is designed specifically for smaller operations with up to 50 members and all essential features.",
+      "Get Mygym scales from small solo gyms to large chains. Our Starter plan is designed specifically for smaller operations with up to 50 members and all essential features.",
   },
   {
     question: "Can I import my existing member data?",
@@ -17,7 +17,7 @@ const faqs = [
   {
     question: "What if I need to integrate with other software?",
     answer:
-      "FitFlow offers a comprehensive API and supports integrations with popular fitness management tools, payment processors, and communication platforms.",
+      "Get Mygym offers a comprehensive API and supports integrations with popular fitness management tools, payment processors, and communication platforms.",
   },
   {
     question: "How does the auto-renewal system work?",

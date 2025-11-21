@@ -81,7 +81,7 @@ export function Blog() {
 
           <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-balance">
             <span className="bg-gradient-to-r from-white via-neon-light to-pink-accent bg-clip-text text-transparent">
-              FitFlow Blog
+              Get My gym Blog
             </span>
           </h2>
 

@@ -1,6 +1,7 @@
-"use client"
+"use client";
 
-import { Github, Linkedin, Twitter, Mail } from "lucide-react"
+import Link from "next/link";
+import { Github, Linkedin, Twitter, Mail } from "lucide-react";
 
 export function Footer() {
   return (
@@ -10,10 +11,21 @@ export function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-gradient-to-br from-neon to-neon-light rounded-lg" />
-              <span className="text-xl font-bold text-white">FitFlow</span>
+              <Link href="/" className="flex items-center">
+                <img
+                  src="/logo1.png"
+                  alt="Get Mygym"
+                  className="h-21 w-21 rounded-lg object-cover"
+                />
+                <span className="text-xl font-bold hover:text-purple-300/85 text-white/85 hidden sm:inline">
+                  Get My GYM
+                </span>
+              </Link>
             </div>
-            <p className="text-gray-400 text-sm">Powerful gym management software for modern fitness businesses.</p>
+            <p className="text-gray-400 text-sm">
+              Powerful gym management software for modern fitness businesses
+              across India.
+            </p>
           </div>
 
           {/* Product */}
@@ -21,22 +33,22 @@ export function Footer() {
             <h4 className="text-white font-semibold mb-4">Product</h4>
             <ul className="space-y-3 text-sm text-gray-400">
               <li>
-                <a href="#" className="hover:text-neon transition">
+                <Link href="/features" className="hover:text-neon transition">
                   Features
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-neon transition">
+                <Link href="/pricing" className="hover:text-neon transition">
                   Pricing
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-neon transition">
+                <a href="/security" className="hover:text-neon transition">
                   Security
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-neon transition">
+                <a href="/roadmap" className="hover:text-neon transition">
                   Roadmap
                 </a>
               </li>
@@ -48,24 +60,24 @@ export function Footer() {
             <h4 className="text-white font-semibold mb-4">Company</h4>
             <ul className="space-y-3 text-sm text-gray-400">
               <li>
-                <a href="#" className="hover:text-neon transition">
+                <Link href="/about" className="hover:text-neon transition">
                   About
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-neon transition">
+                <Link href="/blog" className="hover:text-neon transition">
                   Blog
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-neon transition">
+                <Link href="/careers" className="hover:text-neon transition">
                   Careers
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-neon transition">
+                <Link href="/contact" className="hover:text-neon transition">
                   Contact
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -75,24 +87,24 @@ export function Footer() {
             <h4 className="text-white font-semibold mb-4">Legal</h4>
             <ul className="space-y-3 text-sm text-gray-400">
               <li>
-                <a href="#" className="hover:text-neon transition">
+                <Link href="/privacy" className="hover:text-neon transition">
                   Privacy
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-neon transition">
+                <Link href="/terms" className="hover:text-neon transition">
                   Terms
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-neon transition">
+                <Link href="/cookies" className="hover:text-neon transition">
                   Cookies
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-neon transition">
+                <Link href="/support" className="hover:text-neon transition">
                   Support
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -100,7 +112,9 @@ export function Footer() {
 
         <div className="border-t border-gray-800 pt-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-gray-400 text-sm">© 2025 FitFlow. All rights reserved.</p>
+            <p className="text-gray-400 text-sm">
+              © 2025 Get Mygym. All rights reserved.
+            </p>
             <div className="flex items-center gap-6">
               <a href="#" className="text-gray-400 hover:text-neon transition">
                 <Twitter size={20} />
@@ -119,5 +133,5 @@ export function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }

@@ -80,26 +80,6 @@ export function AdminDashboard() {
             </div>
           ))}
         </div>
-
-        {/* Feature highlights */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-12">
-          {[
-            { icon: "📊", label: "Real-time Analytics" },
-            { icon: "👥", label: "Member Profiles" },
-            { icon: "💰", label: "Revenue Tracking" },
-            { icon: "📅", label: "Schedule Management" },
-          ].map((feature, idx) => (
-            <div
-              key={idx}
-              className="p-4 rounded-lg bg-card/40 border border-neon/20 hover:border-neon/50 transition-all duration-300 hover:bg-card/60 text-center group"
-            >
-              <div className="text-3xl mb-2 group-hover:scale-125 transition-transform duration-300">
-                {feature.icon}
-              </div>
-              <p className="text-sm text-gray-300 font-medium">{feature.label}</p>
-            </div>
-          ))}
-        </div>
       </div>
 
       {selectedImage && (

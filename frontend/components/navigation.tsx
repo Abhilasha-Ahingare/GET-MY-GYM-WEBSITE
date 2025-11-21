@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -22,55 +23,71 @@ export function Navigation({ scrollY }: NavigationProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
-            <a href="/" className="flex items-center">
+            <Link href="/" className="flex items-center">
               <img
                 src="/logo1.png"
-                alt="FitFlow"
+                alt="Get Mygym"
                 className="h-21 w-21 rounded-lg object-cover"
               />
-              <span className="text-xl font-bold text-white hidden sm:inline">
-                Get My_GYM
+              <span className="text-xl font-bold hover:text-purple-300/85 text-white/85 hidden sm:inline">
+                Get My GYM
               </span>
-            </a>
+            </Link>
           </div>
 
           <div className="hidden md:flex items-center gap-8">
-            <a
-              href="#features"
+            <Link
+              href="/"
               className="text-gray-300 hover:text-neon border-b-2 border-transparent hover:border-white transition-all duration-300 hover:translate-x-1"
             >
-              Features
-            </a>
-            <a
-              href="#pricing"
+              Home
+            </Link>
+            <Link
+              href="/pricing"
               className="text-gray-300 hover:text-neon border-b-2 border-transparent hover:border-white transition-all duration-300 hover:translate-x-1"
             >
               Pricing
-            </a>
-            <a
+            </Link>
+            <Link
               href="#about"
               className="text-gray-300 hover:text-neon border-b-2 border-transparent hover:border-white transition-all duration-300 hover:translate-x-1"
             >
               About
-            </a>
-            <a
+            </Link>
+            <Link
+              href="/blog"
+              className="text-gray-300 hover:text-neon border-b-2 border-transparent hover:border-white transition-all duration-300 hover:translate-x-1"
+            >
+              Blog
+            </Link>
+            <Link
+              href="#features"
+              className="text-gray-300 hover:text-neon border-b-2 border-transparent hover:border-white transition-all duration-300 hover:translate-x-1"
+            >
+              features
+            </Link>
+            <Link
               href="#contact"
               className="text-gray-300 hover:text-neon border-b-2 border-transparent hover:border-white transition-all duration-300 hover:translate-x-1"
             >
               Contact
-            </a>
+            </Link>
           </div>
 
           <div className="hidden md:flex items-center gap-3">
-            <Button
-              variant="outline"
-              className="border-neon/50 text-neon hover:bg-neon/10 bg-transparent"
-            >
-              Login
-            </Button>
-            <Button className="bg-gradient-to-r from-neon to-neon-light hover:from-neon-dark hover:to-neon text-black">
-              Book Demo
-            </Button>
+            <Link href="/login">
+              <Button
+                variant="outline"
+                className="border-neon/50 text-neon hover:bg-neon/10 bg-transparent"
+              >
+                Login
+              </Button>
+            </Link>
+            <Link href="/book-demo">
+              <Button className="bg-gradient-to-r from-neon to-neon-light hover:from-neon-dark hover:to-neon text-black">
+                Book Demo
+              </Button>
+            </Link>
           </div>
 
           <button
@@ -83,27 +100,36 @@ export function Navigation({ scrollY }: NavigationProps) {
 
         {mobileMenuOpen && (
           <div className="md:hidden pb-4 space-y-3">
-            <a href="#features" className="block text-gray-300 hover:text-neon">
-              Features
-            </a>
-            <a href="#pricing" className="block text-gray-300 hover:text-neon">
+            <Link href="/" className="block text-gray-300 hover:text-neon">
+              Home
+            </Link>
+            <Link
+              href="/pricing"
+              className="block text-gray-300 hover:text-neon"
+            >
               Pricing
-            </a>
-            <a href="#about" className="block text-gray-300 hover:text-neon">
+            </Link>
+            <Link href="/about" className="block text-gray-300 hover:text-neon">
               About
-            </a>
-            <a href="#contact" className="block text-gray-300 hover:text-neon">
+            </Link>
+            <Link href="/blog" className="block text-gray-300 hover:text-neon">
+              Blog
+            </Link>
+            <Link
+              href="/contact"
+              className="block text-gray-300 hover:text-neon"
+            >
               Contact
-            </a>
+            </Link>
             <div className="flex flex-col gap-2 pt-2">
               <Button
                 variant="outline"
                 className="border-neon/50 text-neon hover:bg-neon/10 w-full bg-transparent"
               >
-                Try Free
+                <a href="/login">Login</a>
               </Button>
               <Button className="bg-gradient-to-r from-neon to-neon-light hover:from-neon-dark hover:to-neon text-black w-full">
-                Book Demo
+                <a href="/book-demo">Book Demo</a>
               </Button>
             </div>
           </div>

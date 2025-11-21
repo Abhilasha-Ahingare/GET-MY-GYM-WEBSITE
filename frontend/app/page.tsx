@@ -5,15 +5,13 @@ import { Navigation } from "@/components/navigation"
 import { Hero } from "@/components/hero"
 import { Features } from "@/components/features"
 import { Modules } from "@/components/modules"
-// import { Dashboard } from "@/components/dashboard"
 import { AdminDashboard } from "@/components/admin-dashboard"
-import { Pricing } from "@/components/pricing"
 import { Testimonials } from "@/components/testimonials"
 import { About } from "@/components/about"
-import { Blog } from "@/components/blog"
 import { FAQ } from "@/components/faq"
 import { CTA } from "@/components/cta"
 import { Footer } from "@/components/footer"
+import { Pricing } from "@/components/pricing"
 
 export default function Home() {
   const [scrollY, setScrollY] = useState(0)
@@ -29,14 +27,12 @@ export default function Home() {
       <Navigation scrollY={scrollY} />
       <main>
         <Hero />
-        <Features />
         <About />
+        <Features />
         <Modules />
-        {/* <Dashboard /> */}
         <AdminDashboard />
-        <Pricing />
+        <Pricing/>
         <Testimonials />
-        <Blog />
         <FAQ />
         <CTA />
       </main>
