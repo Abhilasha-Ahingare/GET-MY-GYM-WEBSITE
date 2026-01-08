@@ -118,22 +118,6 @@ export function Features() {
             )
           })}
         </div>
-
-        {/* Additional feature highlights */}
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-          <div className="p-6 rounded-xl bg-gray-900/40 border border-neon/20">
-            <div className="text-3xl font-bold text-neon mb-2">500+</div>
-            <div className="text-gray-400">Gyms Using Our Platform</div>
-          </div>
-          <div className="p-6 rounded-xl bg-gray-900/40 border border-neon/20">
-            <div className="text-3xl font-bold text-neon-light mb-2">50,000+</div>
-            <div className="text-gray-400">Active Members Managed</div>
-          </div>
-          <div className="p-6 rounded-xl bg-gray-900/40 border border-neon/20">
-            <div className="text-3xl font-bold text-accent mb-2">1M+</div>
-            <div className="text-gray-400">Monthly Check-ins Processed</div>
-          </div>
-        </div>
       </div>
     </section>
   )

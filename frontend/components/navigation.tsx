@@ -49,7 +49,7 @@ export function Navigation({ scrollY }: NavigationProps) {
               Pricing
             </Link>
             <Link
-              href="#about"
+              href="/"
               className="text-gray-300 hover:text-neon border-b-2 border-transparent hover:border-white transition-all duration-300 hover:translate-x-1"
             >
               About
@@ -61,13 +61,13 @@ export function Navigation({ scrollY }: NavigationProps) {
               Blog
             </Link>
             <Link
-              href="#features"
+              href="/"
               className="text-gray-300 hover:text-neon border-b-2 border-transparent hover:border-white transition-all duration-300 hover:translate-x-1"
             >
               features
             </Link>
             <Link
-              href="#contact"
+              href="/"
               className="text-gray-300 hover:text-neon border-b-2 border-transparent hover:border-white transition-all duration-300 hover:translate-x-1"
             >
               Contact
@@ -75,7 +75,7 @@ export function Navigation({ scrollY }: NavigationProps) {
           </div>
 
           <div className="hidden md:flex items-center gap-3">
-            <Link href="/login">
+            <Link href="http://localhost:5173/login">
               <Button
                 variant="outline"
                 className="border-neon/50 text-neon hover:bg-neon/10 bg-transparent"
