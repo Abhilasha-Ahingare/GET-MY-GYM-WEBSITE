@@ -32,12 +32,15 @@ export function Hero() {
   return (
     <section
       ref={containerRef}
-      className="relative min-h-screen flex items-center justify-center pt-20 px-4 sm:px-6 lg:px-7 overflow-hidden bg-cover bg-center bg-no-repeat"
+      className="relative min-h-screen flex items-center justify-center pt-16 sm:pt-20 px-3 sm:px-4 md:px-6 lg:px-8 overflow-hidden bg-cover bg-center bg-no-repeat bg-fixed"
       style={{
         backgroundImage: 'url("/hero bg.jpg")',
+        backgroundAttachment: "fixed",
+        backgroundPosition: "center",
+        backgroundSize: "cover",
       }}
     >
-      <div className="absolute inset-0 bg-black/60 z-0" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/60 to-black/70 z-0" />
       <div className="max-w-7xl mx-auto text-center relative z-10">
         <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full bg-gradient-to-r from-neon/20 to-neon-light/20 border border-neon/50 backdrop-blur-sm animate-fadeInDown">
           <span className="relative flex h-2 w-2">
@@ -49,7 +52,7 @@ export function Hero() {
           </span>
         </div>
 
-        <h1 className="text-5xl sm:text-6xl lg:text-6xl font-bold mb-6 text-balance">
+        <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 text-balance">
           <span className="inline-block bg-gradient-to-r from-white via-neon to-neon-light bg-clip-text text-transparent animate-fadeInUp">
             Powerful Gym Management
           </span>
@@ -58,15 +61,15 @@ export function Hero() {
           </span>
         </h1>
 
-        <p className="text-2xl sm:text-xl text-gray-400 mb-8 text-balance max-w-7xl mx-auto animate-fadeInUp animation-delay-500">
+        <p className="text-base xs:text-lg sm:text-xl md:text-lg lg:text-xl text-gray-300 mb-6 sm:mb-8 text-balance max-w-2xl sm:max-w-3xl lg:max-w-7xl mx-auto animate-fadeInUp animation-delay-500 leading-relaxed">
           Streamline member management, automate renewals, track attendance, and
           gain deep insights—all from a unified, intuitive platform built for
           modern fitness businesses.
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 animate-fadeInUp animation-delay-700">
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-8 sm:mb-12 animate-fadeInUp animation-delay-700 w-full sm:w-auto">
           <Button
-            className="group bg-gradient-to-r from-neon to-neon-light hover:from-neon-dark hover:to-neon text-black font-semibold px-8 py-6 text-lg w-full sm:w-auto transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-neon/50"
+            className="group bg-gradient-to-r from-neon to-neon-light hover:from-neon-dark hover:to-neon text-black font-semibold px-6 sm:px-8 py-3 sm:py-6 text-sm sm:text-lg w-full sm:w-auto transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-neon/50"
             onClick={() => router.push("/book-demo")}
           >
             Book Demo
@@ -77,7 +80,7 @@ export function Hero() {
           </Button>
           <Button
             variant="outline"
-            className="border-neon/50 text-neon hover:bg-neon/10 font-semibold px-8 py-6 text-lg w-full sm:w-auto bg-transparent transition-all duration-300 hover:scale-105 hover:border-neon"
+            className="border-neon/50 text-neon hover:bg-neon/10 font-semibold px-6 sm:px-8 py-3 sm:py-6 text-sm sm:text-lg w-full sm:w-auto bg-transparent transition-all duration-300 hover:scale-105 hover:border-neon"
           >
             <Play size={20} className="mr-2" />
             Watch Demo
