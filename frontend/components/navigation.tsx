@@ -14,10 +14,12 @@ export function Navigation({ scrollY }: NavigationProps) {
 
   return (
     <nav
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+      className={`fixed top-0 w-full z-50 transition-all duration-300 md:${
         scrollY > 50
           ? "bg-background/95 backdrop-blur-md border-b border-neon/20 shadow-lg shadow-neon/10"
           : "bg-transparent"
+      } ${
+        scrollY <= 50 ? "bg-black/60 md:bg-transparent" : "bg-background/95"
       }`}
     >
       <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
@@ -146,9 +148,7 @@ export function Navigation({ scrollY }: NavigationProps) {
               >
                 <a href="/login">Login</a>
               </Button>
-              <Button className="bg-gradient-to-r from-neon to-neon-light hover:from-neon-dark hover:to-neon text-black w-full text-sm">
-                <a href="/book-demo">Book Demo</a>
-              </Button>
+             
             </div>
           </div>
         )}
