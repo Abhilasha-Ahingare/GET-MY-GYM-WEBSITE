@@ -1,6 +1,7 @@
 "use client"
 
 import { Users, Clock, RefreshCw, TrendingUp, Bell, BarChart3, FileText, Download, MessageCircle, IndianRupee, Search, Shield } from "lucide-react"
+import { useEffect, useRef, useState } from "react"
 
 const features = [
   {
@@ -78,42 +79,96 @@ const features = [
 ]
 
 export function Features() {
+  const [isVisible, setIsVisible] = useState(false)
+  const sectionRef = useRef<HTMLElement>(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true)
+        }
+      },
+      { threshold: 0.1 }
+    )
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current)
+    }
+
+    return () => observer.disconnect()
+  }, [])
+
   return (
-    <section id="features" className="py-24 px-4 sm:px-6 lg:px-7 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto">
-        {/* Section header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold mb-4 text-white">Complete Gym Management Solution</h2>
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+    <section
+      ref={sectionRef}
+      id="features"
+      className="py-10 sm:py-20 lg:py-28 px-4 sm:px-6 lg:px-8 relative overflow-hidden"
+    >
+      {/* Background elements */}
+      <div className="absolute inset-0 bg-grid-gray-900/[0.04] bg-[size:20px_20px]" />
+      <div className="absolute top-0 left-1/4 w-72 h-72 bg-neon/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 right-1/4 w-72 h-72 bg-accent/5 rounded-full blur-3xl" />
+
+      <div className="max-w-7xl mx-auto relative z-10">
+        {/* Section header with animation */}
+        <div className={`text-center mb-10 lg:mb-20 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <h2 className="text-3xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold mb-6 text-white leading-tight">
+            Complete <span className="bg-gradient-to-r from-neon to-accent bg-clip-text text-transparent">Gym Management</span> Solution
+          </h2>
+          <p className="text-base sm:text-lg lg:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
             Everything you need to run your gym smoothly - from member check-ins to financial reports, all in one platform.
           </p>
         </div>
 
-        {/* Features grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* Features grid with staggered animation */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
           {features.map((feature, idx) => {
             const Icon = feature.icon
+            const delay = idx * 100
             return (
               <div
                 key={idx}
-                className="group relative p-6 rounded-xl bg-gradient-to-b from-gray-900/50 to-gray-800/50 border border-gray-800 hover:border-neon/50 transition-all duration-300 hover:shadow-lg hover:shadow-neon/20 overflow-hidden"
+                className={`group relative p-4 sm:p-6 rounded-2xl bg-gradient-to-b from-gray-900/60 to-gray-800/40 border border-gray-800 hover:border-neon/50 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-neon/10 backdrop-blur-sm overflow-hidden
+                  ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+                style={{
+                  transitionDelay: `${delay}ms`,
+                  transitionProperty: 'opacity, transform',
+                }}
               >
-                {/* Gradient overlay on hover */}
-                <div
-                  className={`absolute inset-0 bg-gradient-to-br ${feature.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300 -z-10`}
-                />
+                {/* Background glow effect */}
+                <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-neon/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-                <div
-                  className={`w-12 h-12 rounded-lg bg-gradient-to-br ${feature.color} p-2.5 mb-4 flex items-center justify-center`}
-                >
-                  <Icon className="text-white" size={24} />
+                {/* Animated border effect */}
+                <div className="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-neon/20 transition-colors duration-500" />
+
+                {/* Icon container */}
+                <div className="relative mb-4 sm:mb-5">
+                  <div className="relative inline-block">
+                    <div className={`w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-to-br ${feature.color} p-2 flex items-center justify-center shadow-lg`}>
+                      <Icon className="text-white" size={20} />
+                    </div>
+                    <div className="absolute -inset-3 bg-gradient-to-br from-neon/30 to-accent/30 rounded-xl blur-xl opacity-0 group-hover:opacity-70 transition-opacity duration-500 -z-10" />
+                  </div>
                 </div>
 
-                <h3 className="text-lg font-bold text-white mb-2">{feature.title}</h3>
-                <p className="text-gray-400 text-sm leading-relaxed">{feature.description}</p>
+                {/* Content */}
+                <div className="relative">
+                  <h3 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3 group-hover:text-neon transition-colors duration-300">
+                    {feature.title}
+                  </h3>
+                  <p className="text-sm sm:text-base text-gray-400 leading-relaxed">
+                    {feature.description}
+                  </p>
+                </div>
 
-                {/* Decorative line */}
-                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-neon to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                {/* Hover indicator line */}
+                <div className="absolute bottom-0 left-6 right-6 h-0.5 bg-gradient-to-r from-transparent via-neon to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 transform scale-x-0 group-hover:scale-x-100" />
+
+                {/* Number indicator (hidden on smallest screens) */}
+                <div className="absolute top-4 right-4 sm:top-5 sm:right-5 text-xs font-bold text-gray-500 group-hover:text-neon transition-colors duration-300">
+                  {(idx + 1).toString().padStart(2, '0')}
+                </div>
               </div>
             )
           })}

@@ -42,7 +42,7 @@ export function Hero() {
     >
       <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/60 to-black/70 z-0" />
       <div className="w-full max-w-7xl mx-auto px-2 sm:px-4 text-center relative z-10">
-        <div className="inline-flex items-center gap-1 sm:gap-2 mb-3 sm:mb-6 px-2 sm:px-4 py-1 sm:py-2 rounded-full bg-gradient-to-r from-neon/20 to-neon-light/20 border border-neon/50 backdrop-blur-sm animate-fadeInDown">
+        {/* <div className="inline-flex items-center gap-1 sm:gap-2 mb-3 sm:mb-6 px-2 sm:px-4 py-1 sm:py-2 rounded-full bg-gradient-to-r from-neon/20 to-neon-light/20 border border-neon/50 backdrop-blur-sm animate-fadeInDown">
           <span className="relative flex h-1.5 w-1.5 sm:h-2 sm:w-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-neon opacity-75" />
             <span className="relative inline-flex rounded-full h-1.5 w-1.5 sm:h-2 sm:w-2 bg-neon" />
@@ -50,7 +50,7 @@ export function Hero() {
           <span className="text-xs sm:text-sm text-neon font-medium">
             Introducing Get_Mygym
           </span>
-        </div>
+        </div> */}
 
         <h1 className="text-2xl xs:text-2.5xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold mb-2 sm:mb-4 md:mb-6 text-balance leading-tight">
           <span className="inline-block bg-gradient-to-r from-white via-neon to-neon-light bg-clip-text text-transparent animate-fadeInUp">
@@ -69,7 +69,7 @@ export function Hero() {
 
         <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 md:gap-4 justify-center items-stretch sm:items-center mb-6 sm:mb-8 md:mb-12 animate-fadeInUp animation-delay-700">
           <Button
-            className="group bg-gradient-to-r from-neon to-neon-light hover:from-neon-dark hover:to-neon text-black font-semibold px-3 sm:px-5 md:px-8 py-1.5 sm:py-2.5 md:py-6 text-[0.65rem] sm:text-xs md:text-sm lg:text-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-neon/50 rounded"
+            className="group bg-gradient-to-r from-neon to-neon-light hover:from-neon-dark hover:to-neon text-black font-semibold px-3 sm:px-5 md:px-8 py-1.5 sm:py-2.5 md:py-6 text-[0.65rem] sm:text-xs md:text-sm lg:text-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-neon/50 rounded-lg"
             onClick={() => router.push("/book-demo")}
           >
             Book Demo
@@ -80,7 +80,7 @@ export function Hero() {
           </Button>
           <Button
             variant="outline"
-            className="border-neon/50 text-neon hover:bg-neon/10 font-semibold px-3 sm:px-5 md:px-8 py-1.5 sm:py-2.5 md:py-6 text-[0.65rem] sm:text-xs md:text-sm lg:text-lg bg-transparent transition-all duration-300 hover:scale-105 hover:border-neon rounded"
+            className="border-neon/50 text-neon hover:bg-neon/10 font-semibold px-3 sm:px-5 md:px-8 py-1.5 sm:py-2.5 md:py-6 text-[0.65rem] sm:text-xs md:text-sm lg:text-lg bg-transparent transition-all duration-300 hover:scale-105 hover:border-neon rounded-lg"
           >
             <Play size={14} className="mr-1 sm:mr-2" />
             Watch Demo

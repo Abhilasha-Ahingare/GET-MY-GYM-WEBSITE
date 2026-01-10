@@ -1,33 +1,34 @@
-"use client"
+"use client";
 
-import { useEffect, useState, useRef } from "react"
-import gsap from "gsap"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
-import { Navigation } from "@/components/navigation"
-import { Hero } from "@/components/hero"
-import { Features } from "@/components/features"
-import { Modules } from "@/components/modules"
-import { AdminDashboard } from "@/components/admin-dashboard"
-import { Testimonials } from "@/components/testimonials"
-import { About } from "@/components/about"
-import { FAQ } from "@/components/faq"
-import { CTA } from "@/components/cta"
-import { Footer } from "@/components/footer"
-import { Pricing } from "@/components/pricing"
+import { useEffect, useState, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Navigation } from "@/components/navigation";
+import { Hero } from "@/components/hero";
+import { Features } from "@/components/features";
+import { Modules } from "@/components/modules";
+import { AdminDashboard } from "@/components/admin-dashboard";
+import { Testimonials } from "@/components/testimonials";
+import { About } from "@/components/about";
+import { FAQ } from "@/components/faq";
+import { CTA } from "@/components/cta";
+import { Footer } from "@/components/footer";
+import { Pricing } from "@/components/pricing";
 
 export default function Home() {
-  const [scrollY, setScrollY] = useState(0)
-  const mainRef = useRef<HTMLDivElement>(null)
+  const [scrollY, setScrollY] = useState(0);
+  const mainRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     // Initialize GSAP ScrollTrigger
-    gsap.registerPlugin(ScrollTrigger)
+    gsap.registerPlugin(ScrollTrigger);
 
     // Setup scroll animations for all sections
-    const sections = gsap.utils.toArray(".scroll-section")
-    
+    const sections = gsap.utils.toArray(".scroll-section");
+
     sections.forEach((section: any) => {
-      gsap.fromTo(section,
+      gsap.fromTo(
+        section,
         {
           opacity: 0,
           y: 50,
@@ -43,10 +44,10 @@ export default function Home() {
             end: "top 20%",
             toggleActions: "play none none reverse",
             markers: false, // Set to true for debugging
-          }
+          },
         }
-      )
-    })
+      );
+    });
 
     // Parallax effect for background elements
     gsap.to(".parallax-bg", {
@@ -57,20 +58,20 @@ export default function Home() {
         start: "top top",
         end: "bottom top",
         scrub: true,
-      }
-    })
+      },
+    });
 
     // Cleanup
     return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill())
-    }
-  }, [])
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
+  }, []);
 
   useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY)
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-hidden">
@@ -82,25 +83,26 @@ export default function Home() {
       </div>
 
       <Navigation scrollY={scrollY} />
-      
+
       <main ref={mainRef}>
         <section className="scroll-section">
           <Hero />
         </section>
         <section className="scroll-section">
-          <About />
-        </section>
-        <section className="scroll-section">
           <Features />
-        </section>
-        <section className="scroll-section">
-          <Modules />
         </section>
         <section className="scroll-section">
           <AdminDashboard />
         </section>
+
+        <section className="scroll-section">
+          <Modules />
+        </section>
         <section className="scroll-section">
           <Pricing />
+        </section>
+        <section className="scroll-section">
+          <About />
         </section>
         <section className="scroll-section">
           <Testimonials />
@@ -112,10 +114,10 @@ export default function Home() {
           <CTA />
         </section>
       </main>
-      
+
       <div className="parallax-bg">
         <Footer />
       </div>
     </div>
-  )
+  );
 }
